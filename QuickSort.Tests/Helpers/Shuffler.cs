@@ -7,7 +7,7 @@ namespace QuickSort.Tests.Helpers
     {
         public static void ShuffleByKnuteMethod<T>(T list) where T : IList
         {
-            Random rnd = new Random();
+            var rnd = new Random();
             
             for (int i = 0; i < list.Count; i++)
             {
