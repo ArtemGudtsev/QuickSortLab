@@ -5,12 +5,12 @@ namespace QuickSort
 {
     public class Sorter<T> where T : IComparable
     {
-        public static void Sort(IList<T> array)
+        public void Sort(IList<T> array)
         {
             Sort(array, 0, array.Count - 1);
         }
 
-        private static void Sort(IList<T> array, int lo, int hi)
+        private void Sort(IList<T> array, int lo, int hi)
         {
             if (lo < hi)
             {
@@ -20,7 +20,7 @@ namespace QuickSort
             }
         }
 
-        private static int Partition(IList<T> array, int lo, int hi)
+        private int Partition(IList<T> array, int lo, int hi)
         {
             var pivot = GetPivot(array, lo, hi);
             var i = lo;
