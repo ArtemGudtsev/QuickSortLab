@@ -11,7 +11,7 @@ namespace QuickSort.Tests
         public void Theory(int[] value)
         {
             var array = value.Clone() as int[];
-            Sorter<int> sorter = new Sorter<int>();
+            Sorter<int, int[]> sorter = new Sorter<int, int[]>();
 
             Shuffler.ShuffleByKnuteMethod(array);
             sorter.Sort(array);

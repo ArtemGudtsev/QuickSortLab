@@ -3,14 +3,16 @@ using System.Collections.Generic;
 
 namespace QuickSort
 {
-    public class Sorter<T> where T : IComparable
+    public class Sorter<TItem, TList> 
+        where TItem : IComparable 
+        where TList : IList<TItem>
     {
-        public void Sort(IList<T> array)
+        public void Sort(TList array)
         {
             Sort(array, 0, array.Count - 1);
         }
 
-        private void Sort(IList<T> array, int lo, int hi)
+        private void Sort(TList array, int lo, int hi)
         {
             if (lo < hi)
             {
@@ -20,7 +22,7 @@ namespace QuickSort
             }
         }
 
-        private int Partition(IList<T> array, int lo, int hi)
+        private int Partition(TList array, int lo, int hi)
         {
             var pivot = GetPivot(array, lo, hi);
             var i = lo;
@@ -32,7 +34,7 @@ namespace QuickSort
                 while (array[j].CompareTo(pivot) > 0) --j;
                 if (i <= j)
                 {
-                    T t = array[i];
+                    TItem t = array[i];
                     array[i] = array[j];
                     array[j] = t;
                     ++i;
@@ -43,7 +45,7 @@ namespace QuickSort
             return i;
         }
         
-        private static T GetPivot(IList<T> array, int lo, int hi)
+        private static TItem GetPivot(TList array, int lo, int hi)
         {
             //return array[hi];//античная реализация
             //return array[lo];//как у Кормена
