@@ -13,7 +13,7 @@ namespace QuickSort.Tests
             var array = value.Clone() as int[];
 
             Shuffler.ShuffleByKnuteMethod(array);
-            Sorter<int>.Sort(array, 0, array.Length - 1);
+            Sorter<int>.Sort(array);
             Assert.Equal(value, array);
         }
     }

@@ -5,7 +5,12 @@ namespace QuickSort
 {
     public class Sorter<T> where T : IComparable
     {
-        public static void Sort(IList<T> array, int lo, int hi)
+        public static void Sort(IList<T> array)
+        {
+            Sort(array, 0, array.Count - 1);
+        }
+
+        private static void Sort(IList<T> array, int lo, int hi)
         {
             if (lo < hi)
             {
